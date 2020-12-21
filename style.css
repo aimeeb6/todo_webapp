@@ -62,7 +62,7 @@ form button:hover{
     justify-content: space-between;
     align-items: center;
     border-radius: 6px;
-    transition: all 0.5s ease;
+    transition: all 0.3s ease;
 }
 
 .todo li {
@@ -100,5 +100,36 @@ form button:hover{
 }
 
 .fall {
-    transform: translateY(4rem) rotateZ(20deg);
+    transform: translateY(8rem) rotateZ(20deg);
+}
+
+select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    outline: none;
+    border: none;
+}
+
+.select {
+    margin: 1rem;
+    position: relative;
+    overflow: hidden;
+}
+
+select{
+    color: rgb(196, 46, 201);
+    width: 10rem;
+    cursor: pointer;
+    padding: 1rem;
+}
+
+.select::after{
+    content: "\25BC";
+    position: absolute;
+    background-color:  rgb(196, 46, 201);
+    top: 0;
+    right: 0;
+    padding: 1rem;
+    pointer-events: none;
 }

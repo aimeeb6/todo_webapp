@@ -2,27 +2,33 @@
 let todoInput = document.querySelector(".todo-input");
 let todoBtn = document.querySelector(".add-todo-btn");
 let todoList = document.querySelector(".todo-list");
-
+let todoValue = todoInput.value;
 // Event Listeners
 
-todoBtn.addEventListener("click", addTodo);
+todoBtn.addEventListener("click", addTodoFromTodoInput);
 todoList.addEventListener("click", checkTodo);
 
 //Functions
 
-function addTodo(event) {
-  if (!todoInput.value) {
-    event.preventDefault();
-    return;
-  }
+function addTodoFromTodoInput(event){
+    if (!todoInput.value) {
+        event.preventDefault();
+        return;
+    }
+
+    createTodo(event, todoInput.value)
+    todoInput.value = ""; //make sure todo is empty
+}
+
+function createTodo(event, value) {
 
   event.preventDefault();
   const todoDiv = document.createElement("div");
   todoDiv.classList.add("todo");
 
   const todoItem = document.createElement("li");
-  todoItem.innerText = todoInput.value;
-  todoInput.value = "";
+  todoItem.innerText = value;
+  
   todoDiv.classList.add("todo-item");
 
   const checkBtn = document.createElement("button");
@@ -55,3 +61,4 @@ function checkTodo(event) {
       todo.classList.toggle("completed");
   }
 }
+
