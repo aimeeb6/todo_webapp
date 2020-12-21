@@ -118,6 +118,7 @@ select {
 }
 
 select{
+    background-color:  rgb(255, 255, 255);
     color: rgb(196, 46, 201);
     width: 10rem;
     cursor: pointer;
@@ -127,9 +128,21 @@ select{
 .select::after{
     content: "\25BC";
     position: absolute;
-    background-color:  rgb(196, 46, 201);
+    color: rgb(196, 46, 201);
     top: 0;
     right: 0;
     padding: 1rem;
     pointer-events: none;
+}
+
+.select:hover::after{
+    content: "\25BC";
+    position: absolute;
+    background-color: rgb(196, 46, 201);
+    color: rgb(255, 255, 255);
+    top: 0;
+    right: 0;
+    padding: 1rem;
+    pointer-events: none;
+
 }
